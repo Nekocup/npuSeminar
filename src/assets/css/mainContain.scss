@@ -1,0 +1,90 @@
+.container {
+  padding-top: 2em;
+  .section1 {
+    display: none;
+  }
+  .section2 {
+    padding: 1em;
+    width: 100%;
+    background-color: #ddeffd;
+    box-sizing: border-box;
+    input {
+      box-sizing: border-box;
+      border: none;
+      border-radius: 3px;
+      padding: 1em;
+      background-color: #a4b1bc;
+      width: 100%;
+      max-width: 608px;
+      margin: 0.5em 0.5em 0.5em 0;
+      font-size: 16px;
+      color: #ffffff;
+    }
+    ::placeholder {
+      color: #ffffff;
+      font-size: 16px;
+    }
+    .name {
+      > input {
+        width: calc(50% - 8px);
+        max-width: 300px;
+      }
+    }
+    .join {
+      color: #404040;
+      padding-top: 1em;
+      > div {
+        width: 100%;
+        display: flex;
+        padding: 0.5em 0;
+      }
+      .option {
+        padding-left: 1em;
+        transform: translateY(-8px);
+        input {
+          display: inline-block;
+          width: auto;
+        }
+      }
+    }
+    #buttonCss {
+      background-color: #4da6ec;
+      cursor: pointer;
+      &:hover {
+        background-color: #5fb2f1;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding-top: 1em;
+    display: flex;
+    .section1 {
+      display: block;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      img {
+        width: 100%;
+        max-width: 600px;
+      }
+    }
+    .section2 {
+      width: 50%;
+      padding-left: 5em;
+    }
+  }
+  .backgroundRight {
+    background-color: #ddeffd;
+    z-index: -1;
+    position: fixed;
+    width: 50%;
+    height: 100vh;
+    right: 0;
+    top: 0;
+  }
+}
