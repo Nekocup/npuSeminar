@@ -1,5 +1,6 @@
 .container {
   padding-top: 2em;
+  min-height: calc(100vh - 149.8px - 16px);
   .section1 {
     display: none;
   }
@@ -48,6 +49,7 @@
       }
     }
     #buttonCss {
+      -webkit-appearance: none;
       background-color: #4da6ec;
       cursor: pointer;
       &:hover {
@@ -55,6 +57,9 @@
       }
     }
   }
+}
+.backgroundRight {
+  display: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -79,6 +84,7 @@
     }
   }
   .backgroundRight {
+    display: block;
     background-color: #ddeffd;
     z-index: -1;
     position: fixed;

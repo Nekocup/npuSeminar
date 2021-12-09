@@ -130,13 +130,43 @@ export default {
         this.dept == "" ||
         this.phone == ""
       ) {
-        alert("全部都要填寫，不得為空 !!");
+        setTimeout(() => {
+          alert("全部都要填寫，不得為空 !!");
+        }, 0);
         return;
       }
       if (this.password.length < 8) {
-        alert("密碼長度最少8碼 !!");
+        setTimeout(() => {
+          alert("密碼長度最少8碼 !!");
+        }, 0);
         return;
       }
+      const axios = require("axios");
+
+      axios
+        .post("/register", {
+          firstName: this.firstName,
+          lastName: this.lastName,
+          password: this.password,
+          school: this.school,
+          dept: this.dept,
+          phone: this.phone,
+          email: this.email,
+          toDinner: this.toDinner,
+          groupVisit: this.groupVisit,
+        })
+        .then((data) => {
+          if (data.data == "success") {
+            setTimeout(() => {
+              alert("註冊成功 !");
+              window.location.href = "https://itaoi2022.npu.edu.tw/index.html";
+            }, 0);
+          } else if (data.data == "email same") {
+            alert("信箱已被註冊過!");
+          } else {
+            alert("註冊失敗");
+          }
+        });
     },
   },
 };
